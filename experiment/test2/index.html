@@ -8,6 +8,7 @@
     	var rootUrl = ".";
     </script>
 	<link rel="stylesheet" href="./css/bioPublicCss.css"></link>
+	<link rel="stylesheet" href="./css/preload.css"></link>
 	<script src="js/base/jquery-1.12.3.min.js" ></script>
 	<script src="js/base/three.js" ></script>
 	<script src="js/lib/Tween.js"></script>
@@ -18,7 +19,14 @@
 
 </head>
 <body>
-	<!-- <div style="height: 50px;">50px的div，预留给管理网平台、教师机学生机中播放实验资源界面<button class="reset">reset</button></div> -->
+	<!-- 加载页面 -->
+	<div id="loader-wrapper">
+		<div id="loader"></div>
+		<div id="loading"><span>Loading</span></div>
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
+	</div>
+	<!-- 3D场景 -->
 	<div id="app" tabindex="0"></div>
 
 	<script src="./js/layer/layer.js"></script>
