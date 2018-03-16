@@ -1,0 +1,350 @@
+/*上传到平台资源的样式控制*/
+body {
+	margin: 0;
+	overflow: hidden;
+}
+.clearfix {
+	overflow:auto;
+	_height:1%;
+}
+#app {
+    position: relative;
+}
+
+/*loading*/
+@-webkit-keyframes rotate_pacman_half_up {
+    0% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+    50% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+}
+@keyframes rotate_pacman_half_up {
+    0% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+    50% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+}
+@-webkit-keyframes rotate_pacman_half_down {
+    0% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+    50% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+@keyframes rotate_pacman_half_down {
+    0% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+    50% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+@-webkit-keyframes pacman-balls {
+    75% {
+        opacity: 0.7;
+    }
+    100% {
+        -webkit-transform: translate(-100px, -6.25px);
+        transform: translate(-100px, -6.25px);
+    }
+}
+@keyframes pacman-balls {
+    75% {
+        opacity: 0.7;
+    }
+    100% {
+        -webkit-transform: translate(-100px, -6.25px);
+        transform: translate(-100px, -6.25px);
+    }
+}
+.loading-div {
+    background-color: #222327;
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    visibility: visible;
+    width: 100%;
+    z-index: 10;
+}
+.loading-div[class~="loaded"] {
+    opacity: 0;
+    visibility: hidden;
+}
+.pacman {
+    left: 50%;
+    margin: -50px 0 0 -16px;
+    position: absolute;
+    top: 50%;
+}
+.loading-div[class~="loaded"] .pacman {
+    opacity: 0;
+}
+.pacman > div:nth-child(2) {
+    -webkit-animation: pacman-balls 1s -0.99s infinite linear;
+    animation: pacman-balls 1s -0.99s infinite linear;
+}
+.pacman > div:nth-child(3) {
+    -webkit-animation: pacman-balls 1s -0.66s infinite linear;
+    animation: pacman-balls 1s -0.66s infinite linear;
+}
+.pacman > div:nth-child(4) {
+    -webkit-animation: pacman-balls 1s -0.33s infinite linear;
+    animation: pacman-balls 1s -0.33s infinite linear;
+}
+.pacman > div:nth-child(5) {
+    -webkit-animation: pacman-balls 1s 0s infinite linear;
+    animation: pacman-balls 1s 0s infinite linear;
+}
+.pacman > div:first-of-type {
+    width: 0px;
+    height: 0px;
+    border-right: 25px solid transparent;
+    border-top: 25px solid #e4e600;
+    border-left: 25px solid #e4e600;
+    border-bottom: 25px solid #e4e600;
+    border-radius: 25px;
+    -webkit-animation: rotate_pacman_half_up 0.5s 0s infinite;
+            animation: rotate_pacman_half_up 0.5s 0s infinite;
+    position: relative;
+    left: -30px;
+}
+.pacman > div:nth-child(2) {
+    width: 0px;
+    height: 0px;
+    border-right: 25px solid transparent;
+    border-top: 25px solid #e4e600;
+    border-left: 25px solid #e4e600;
+    border-bottom: 25px solid #e4e600;
+    border-radius: 25px;
+    -webkit-animation: rotate_pacman_half_down 0.5s 0s infinite;
+            animation: rotate_pacman_half_down 0.5s 0s infinite;
+    margin-top: -50px;
+    position: relative;
+    left: -30px;
+}
+.pacman > div:nth-child(3),
+.pacman > div:nth-child(4),
+.pacman > div:nth-child(5),
+.pacman > div:nth-child(6) {
+    background-color: #e4e600;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin: 2px;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    -webkit-transform: translate(0, -6.25px);
+        -ms-transform: translate(0, -6.25px);
+            transform: translate(0, -6.25px);
+    top: 25px;
+    left: 70px;
+}
+.loading-text {
+    color: #A2CFFF;
+    font-size: 24px;
+    font-weight: bold;
+    height: 50px;
+    left: 50%;
+    line-height: 50px;
+    margin-left: -50px;
+    position: absolute;
+    text-shadow: #7588FF 1px 1px;
+    top: 50%;
+}
+.center-btn {
+    background-color: rgba(41, 144, 45, 0.8);
+    border: 0;
+    border-radius: 6px;
+    bottom: 10%;
+    color: rgba(255,255,255,0.9);
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    height: 40px;
+    left: 50%;
+    letter-spacing: 10px;
+    line-height: 42px;
+    padding: 0 0 0 10px;
+    position: absolute;
+    margin-left: -90px;
+    text-align: center;
+    width: 160px;
+}
+.center-btn:hover {
+    background-color: rgba(41, 144, 45, 0.6);
+    color: #fff;
+}
+/*观察模型场景样式*/
+.back-btn > span:nth-child(1) {
+    position: relative;
+    width: 8px;
+    height: 12px;
+    background-color: white;
+    top: 0;
+    left: 14px;
+    display: inline-block;
+    opacity: 1;
+    transform: skew(-40deg);
+    -webkit-transform: skew(-40deg);
+    -moz-transform: skew(-40deg);
+    -ms-transform: skew(-40deg);
+    -o-transform: skew(-40deg);
+}
+.back-btn > span:nth-child(2) {
+    position: relative;
+    width: 8px;
+    height: 12px;
+    background-color: white;
+    top: 12px;
+    left: 6px;
+    display: inline-block;
+    opacity: 1;
+    transform: skew(40deg);
+    -webkit-transform: skew(40deg);
+    -moz-transform: skew(40deg);
+    -ms-transform: skew(40deg);
+    -o-transform: skew(40deg);
+}
+.back-btn:hover span{
+    opacity: 0.8;
+}
+.observe-menu {
+    background: rgba(0, 0, 0, 0.25);
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 200px;
+    z-index: 5;
+}
+.observe-menu .level1 {
+    list-style: none;
+    margin: 150px 0 0 0;
+    padding: 0;
+}
+.observe-menu .level1 .level1-btn {
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    cursor: pointer;
+    font-size: 26px;
+    font-family: microsoft yahei;
+    height: 54px;
+    line-height: 52px;
+    padding-left: 30px;
+    position: relative;
+    text-align: left;
+    width: 170px;
+}
+.observe-menu .level1 li.active .level1-btn {
+    background-color: #fff;
+    color: #111;
+    margin-left: -16px;
+    padding-left: 46px;
+    width: 170px;
+}
+.observe-menu .level1 .level1-btn:hover {
+    background-color: #fff;
+    color: #111;
+    margin-left: -16px;
+    padding-left: 46px;
+    width: 170px;
+}
+.observe-menu .level1 > li:nth-child(2) .level1-btn {
+    border-bottom:0;
+}
+.observe-menu .level2 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.observe-menu .level2 button {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    cursor: pointer;
+    font-size: 22px;
+    font-family: microsoft yahei;
+    height: 46px;
+    letter-spacing: 7px;
+    outline: none;
+    text-align: right;
+    width: 150px;
+}
+.observe-menu .level2 li.active button {
+    color: #A7E000;
+    border-color: rgb(255, 255, 255);
+    border-left: 4px solid #a7e000;
+}
+.observe-menu .level2 button:hover {
+    color: #A7E000;
+}
+
+/*webgl场景自定义弹出框样式*/
+body .webgl-tip-css {
+    min-width: 56px;
+    background-color: #000;
+    filter: alpha(opacity=60);
+    background-color: rgba(0,0,0,.3);
+    color: #fff;
+    border: none;
+}
+body .webgl-tip-css .layui-layer-content{
+    min-width: 56px;
+    background-color: #000;
+    filter: alpha(opacity=60);
+    background-color: rgba(0,0,0,.3);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+}
+body .webgl-wholeScreenTip-css .layui-layer-content{
+    font-size: 26px;
+    font-family: microsoft yahei;
+    background-color: #000;
+    color: #fff;
+}
+
+/*按照bootstrap定义的sm尺寸，设置设备宽度大于等于769px时的样式*/
+@media screen and (min-width: 769px) {
+    body .webgl-tip-css .layui-layer-content{
+        min-width: 72px;
+        font-size: 18px;
+    }
+}
